@@ -4,13 +4,12 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from 'react-native';
 
 import wateringImg from '../assets/watering.png';
 import colors from '../styles/colors';
-
-import {Button} from '../components/Button';
 
 export function Welcome () {
   return (
@@ -21,7 +20,11 @@ export function Welcome () {
         de forma fácil
       </Text>
       
-      <Image source={wateringImg} style={styles.image} />
+      <Image 
+        source={wateringImg} 
+        style={styles.image}
+        resizeMode= 'contain'
+      />
   
       <Text style={styles.subtitle}>
         Não esqueça mais de regar suas plantas.
@@ -33,6 +36,7 @@ export function Welcome () {
         activeOpacity={0.7}
       >
         <Text style= {styles.buttonText}>
+          >
         </Text>
       </TouchableOpacity>
     
@@ -45,14 +49,14 @@ const styles = StyleSheet.create ({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
   },
   title: {
     fontSize: 32,
     fontWeight: 'bold',
     textAlign: 'center',
     color: colors.heading,
-    marginTop: 39
+    marginTop: 38
   },
   subtitle: {
     textAlign: 'center',
@@ -61,8 +65,7 @@ const styles = StyleSheet.create ({
     color: colors.heading,
   },
   image: {
-    width: 292,
-    height: 284,
+    height: Dimensions.get('window').width * 0.7
   },
   button: {
     backgroundColor: colors.green,
@@ -72,7 +75,6 @@ const styles = StyleSheet.create ({
     marginBottom: 10,
     height: 56,
     width: 56,
-    paddingHorizontal: 10,
   },
   buttonText: {
     color: colors.white,
