@@ -28,7 +28,9 @@ export function Confirmation () {
         </Text>
         
         <View style={styles.footer}>
-          <Button />
+          <Button
+            title="Começar"          
+          />
         </View>
       </View>
     </SafeAreaView>
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
     padding: 30,
   },
   title: {
